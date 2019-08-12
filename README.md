@@ -99,9 +99,9 @@ Your SD card device is typically something in /dev/sd<X> or /dev/mmcblk<X>. Note
 
 ## Partitioning SD card
 
-Here, two parttion are create: /dev/sdX1 for kernel, and /dev/sdx2 for rootfs
+Here, two parttion are create: /dev/sdX1 for kernel, and /dev/sdx2 for rootfs.
 
-Gived example where /dev/sdX is /dev/sdb
+Given example where /dev/sdX is /dev/sdb :
 
     echo "Create primary partition 1 for kernel"
     echo -e "n\np\n1\n\n+256M\nw\n"  | fdisk /dev/sdb
@@ -113,7 +113,7 @@ Gived example where /dev/sdX is /dev/sdb
     mkfs.vfat -F 32 /dev/sdb1
 
     echo "Formatting primary partition sdb2 for rootfs"
-    mkfs.ext4 /dev/sdb2 -F
+    mkfs.ext4 -F /dev/sdb2
 
 ## Making kernel using kernel.org vanilla kernel 4.20.1
 
@@ -152,7 +152,7 @@ Assuming X=b, it looks like:
 
     mount /dev/sdb1 /tmp/sdb1
 
-The following will happed after booting u-boot, and after that kernel 4.20.1 from the SD card:
+The following will happed after booting u-boot, and after booting kernel 4.20.1 from the SD card:
 
     Starting kernel ...
 
