@@ -12,12 +12,15 @@ The latest u-boot version might not work out of the box.
     git clone http://git.denx.de/u-boot.git u-boot-i.mx6 OR
     git clone git://git.denx.de/u-boot.git u-boot-i.mx6
     cd u-boot-i.mx6
+
+The cloned version will comply with master branch (the following command is optional):
+
     git checkout -b <branch-name> # Take the current HEAD (the commit checked
     # out) and create a new branch called <branch-name>
 
 ## u-boot Build
 
-Build u-boot using an ARM cross compiler, e.g. Fedora 29 gcc-arm-linux-gnu.x86_64:
+Build u-boot using an ARM cross compiler, e.g. Fedora 30 gcc-arm-linux-gnu.x86_64:
 
 To make .config file, the following command is required:
 
@@ -37,26 +40,25 @@ To install on Fedora 30 gcc-arm-linux-gnu.x86_64 (which is not native x86_64 com
     Debian:
     ARCH=arm CROSS_COMPILE=arm-none-eabi- make -j8
 
-## Place u-boot.imx or SPL and u-boot.img on SD card
+## Place SPL and u-boot.img OR u-boot.imx on SD card
 
-In Sabre board case, u-boot.imx will not be generated as this board supports SPL. Two files are generated: SPL and u-boot.img.
+For the Sabre board case, u-boot.imx will not be generated as this board supports SPL. Two files are generated: SPL and u-boot.img.
 
 In order to flash the SD card!
 
-SPL should reside at offset 1024B of the SD card. To put it there, do:
+SPL should reside at offset 1024KB (1MB) of the SD card. To put it there, issue the following commands:
 
     $ sudo dd if=SPL of=/dev/sdb bs=1k seek=1; sync
     (Note - the SD card node may vary, so adjust this as needed).
 
-    - Flash the u-boot.img image into the SD card:
-    sudo dd if=u-boot.img of=/dev/sdb bs=1k seek=69; sync
+    Flash the u-boot.img image into the SD card:
+    $ sudo dd if=u-boot.img of=/dev/sdb bs=1k seek=69; sync
 
-U-boot should reside at offset 1024B of your SD card. To put it there, do:
+For the U-boot.imx case, it should reside at offset 1024KB (1MB) of the SD card. To put it there, do:
 
-    $ dd if=u-boot.imx of=/dev/<your-sd-card> bs=1k seek=1
-    $ sync
+    $ dd if=u-boot.imx of=/dev/<your-sd-card> bs=1k seek=1; sync
 
-Your SD card device is typically something in /dev/sd<X> or /dev/mmcblk<X>. Note that you need write permissions on the SD card for the command to succeed, so you might need to su - as root, or use sudo, or do a chmod a+w as root on the SD card device node to grant permissions to users.
+The SD card device is typically something as /dev/sd<X> or /dev/mmcblk<X>. Note that there is a need for write permissions on the SD card for the command to succeed, so there is a need to su - as root, or use sudo, or do a chmod a+w as root on the SD card device node to grant permissions to users.
 
 ## The actual log from the u-boot Sabre Automotive booting:
 
