@@ -1,5 +1,5 @@
-# sabre-automotive-bsp
-This repository is related to Freescale (now NXP) sabre automotive referent development platform
+# i.MX6 sabre-automotive-bsp
+This repository is related to Freescale (now NXP) Open Source sabre automotive referent development platform.
 
 ## imx6 Sabre automotive evaluation board setup
 
@@ -28,9 +28,13 @@ To make .config file, the following command is required:
 
 ## Installing arm cross compiler on the host (the host used is Fedora 30 distro)
 
-To install on Fedora 30 gcc-arm-linux-gnu.x86_64 (which is not native x86_64 compiler), use the following command:
+To install on Fedora 30 gcc-arm-linux-gnu.x86_64 (which is not native x86_64 compiler), the following command is used:
 
     sudo dnf install gcc-arm-linux-gnu.x86_64
+
+To install on Debian Stretch or Buster, the following command is used:
+
+    sudo apt-get install gcc-arm-linux-gnueabihf
 
 ## Actual u-boot compilation:
 
@@ -38,7 +42,7 @@ To install on Fedora 30 gcc-arm-linux-gnu.x86_64 (which is not native x86_64 com
     ARCH=arm CROSS_COMPILE=arm-linux-gnu- make -j8
 
     Debian:
-    ARCH=arm CROSS_COMPILE=arm-none-eabi- make -j8
+    ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8
 
 ## Place SPL and u-boot.img OR u-boot.imx on SD card
 
@@ -46,7 +50,7 @@ For the Sabre board case, u-boot.imx will not be generated as this board support
 
 In order to flash the SD card!
 
-SPL should reside at offset 1024KB (1MB) of the SD card. To put it there, issue the following commands:
+SPL should reside at offset 1024KB (1MB) of the SD card. To place it there:
 
     $ sudo dd if=SPL of=/dev/sdb bs=1k seek=1; sync
     (Note - the SD card node may vary, so adjust this as needed).
@@ -54,7 +58,7 @@ SPL should reside at offset 1024KB (1MB) of the SD card. To put it there, issue 
     Flash the u-boot.img image into the SD card:
     $ sudo dd if=u-boot.img of=/dev/sdb bs=1k seek=69; sync
 
-For the U-boot.imx case, it should reside at offset 1024KB (1MB) of the SD card. To put it there, do:
+For the U-boot.imx case, it should reside at offset 1024KB (1MB) of the SD card. To place it there:
 
     $ dd if=u-boot.imx of=/dev/<your-sd-card> bs=1k seek=1; sync
 
@@ -154,7 +158,7 @@ Assuming X=b, it looks like:
 
     mount /dev/sdb1 /tmp/sdb1
 
-The following will happed after booting u-boot, and after booting kernel 4.20.1 from the SD card:
+The following will happed after booting u-boot, and after booting kernel 4.20.1 from the SD card (initial boot @ [  0.000000]):
 
     Starting kernel ...
 
@@ -202,7 +206,7 @@ The following will happed after booting u-boot, and after booting kernel 4.20.1 
     [    0.000000] Switching to timer-based delay loop, resolution 333ns
     [snap] Booting continues!  
 
-## Making rootfs (using YOCTO sumo distribution):
+## Making rootfs (using latest up to date YOCTO thud distribution):
 
 http://variwiki.com/index.php?title=Yocto_Build_Release&release=RELEASE_MORTY_V1
 
@@ -210,11 +214,11 @@ http://variwiki.com/index.php?title=Yocto_Build_Release&release=RELEASE_MORTY_V1
 
 The tags are also listed in https://github.com/varigit/variscite-bsp-platform/tags
 
-To specify a latest release/tag (up to date), the following is done:
+To specify a latest release/tag (up to date), the following should be issued:
 
     repo init -u https://github.com/varigit/variscite-bsp-platform.git -b refs/tags/thud-fslc-4.14.78-mx6ul-v1.1
 
-To understand how to setup the environment, please, do the following:
+To understand how to setup the environment, the following command should be issued:
 
     source setup-environment
 
