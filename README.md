@@ -163,32 +163,20 @@ The following will happed after booting u-boot, and after booting kernel 5.2.8 f
     Starting kernel ...
 
     [    0.000000] Booting Linux on physical CPU 0x0
-    [    0.000000] Linux version 5.2.8 (vuser@fedora30-ssd) (gcc version 9.1.1 20190503 (Red Hat Cross 9.1.1-1) (GCC)) #1 SMP
-    Sun Aug 11 09:02:22 CEST 2019
+    [    0.000000] Linux version 5.2.8 (vuser@fedora30-ssd) (gcc version 9.1.1 20190503 (Red Hat Cross 9.1.1-1) (GCC)) #1 SMP Wed
+    Aug 14 09:54:08 CEST 2019
     [    0.000000] CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c5387d
     [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
     [    0.000000] OF: fdt: Machine model: Freescale i.MX6 Quad SABRE Automotive Board
     [    0.000000] Memory policy: Data cache writealloc
-    [    0.000000] cma: Reserved 64 MiB at 0x8c000000
-    [    0.000000] random: get_random_bytes called from start_kernel+0x8c/0x488 with crng_init=0
-    [    0.000000] percpu: Embedded 18 pages/cpu @(ptrval) s41896 r8192 d23640 u73728
+    [    0.000000] cma: Reserved 64 MiB at 0x3c000000
+    [    0.000000] percpu: Embedded 21 pages/cpu s54504 r8192 d23320 u86016
     [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 522752
     [    0.000000] Kernel command line: console=ttymxc3,115200 root=PARTUUID=9468c8e5-02 rootwait rw
     [    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
     [    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
-    [    0.000000] Memory: 1989060K/2097152K available (11264K kernel code, 895K rwdata, 3724K rodata, 1024K init, 7619K bss,
-    42556K reserved, 65536K cma-reserved, 1245184K highmem)
-    [    0.000000] Virtual kernel memory layout:
-    [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
-    [    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
-    [    0.000000]     vmalloc : 0xf0800000 - 0xff800000   ( 240 MB)
-    [    0.000000]     lowmem  : 0xc0000000 - 0xf0000000   ( 768 MB)
-    [    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
-    [    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
-    [    0.000000]       .text : 0x(ptrval) - 0x(ptrval)   (12256 kB)
-    [    0.000000]       .init : 0x(ptrval) - 0x(ptrval)   (1024 kB)
-    [    0.000000]       .data : 0x(ptrval) - 0x(ptrval)   ( 896 kB)
-    [    0.000000]        .bss : 0x(ptrval) - 0x(ptrval)   (7620 kB)
+    [    0.000000] Memory: 1988512K/2097152K available (11264K kernel code, 935K rwdata, 4216K rodata, 1024K init, 6925K bss,
+    43104K reserved, 65536K cma-reserved, 1310720K highmem)
     [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
     [    0.000000] Running RCU self tests
     [    0.000000] rcu: Hierarchical RCU implementation.
@@ -203,8 +191,8 @@ The following will happed after booting u-boot, and after booting kernel 5.2.8 f
     [    0.000000] L2C-310 dynamic clock gating enabled, standby mode enabled
     [    0.000000] L2C-310 cache controller enabled, 16 ways, 1024 kB
     [    0.000000] L2C-310: CACHE_ID 0x410000c7, AUX_CTRL 0x76470001
+    [    0.000000] random: get_random_bytes called from start_kernel+0x2ac/0x4ac with crng_init=0
     [    0.000000] Switching to timer-based delay loop, resolution 333ns
-    [snap] Booting continues!  
 
 ## Making rootfs (using latest up to date YOCTO thud distribution):
 
