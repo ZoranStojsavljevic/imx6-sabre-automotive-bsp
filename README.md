@@ -13,7 +13,7 @@ The latest u-boot version might not work out of the box.
     git clone git://git.denx.de/u-boot.git u-boot-i.mx6
     cd u-boot-i.mx6
 
-The cloned version will comply with master branch (the following command is optional):
+The cloned version will comply with HEAD set to master branch (the following command is optional):
 
     git checkout -b <branch-name> # Take the current HEAD (the commit checked
     # out) and create a new branch called <branch-name>
@@ -105,7 +105,7 @@ The SD card device is typically something as /dev/sd<X> or /dev/mmcblk<X>. Note 
 
 ## Partitioning SD card
 
-Here, two parttion are create: /dev/sdX1 for kernel, and /dev/sdx2 for rootfs.
+Here, two parttion are create: /dev/sdX1 for kernel, and /dev/sdX2 for rootfs.
 
 Given example where /dev/sdX is /dev/sdb :
 
@@ -121,18 +121,18 @@ Given example where /dev/sdX is /dev/sdb :
     echo "Formatting primary partition sdb2 for rootfs"
     mkfs.ext4 -F /dev/sdb2
 
-## Making kernel using kernel.org vanilla kernel 4.20.1
+## Making kernel using kernel.org vanilla (the latest stable upon writing this document) kernel 5.2.8
 
-The kernel 4.20.1 source code is located @ the following location:
+The kernel 5.2.8 source code is located @ the following location:
 
-https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/
+https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/
 
-The file to be downloaded is the following: linux-4.20.1.tar.xz
+The file to be downloaded is the following: linux-5.2.8.tar.xz
 
 The command to unpack the designated kernel is:
 
-    tar -xvf inux-4.20.1.tar.xz
-    cd linux-4.20.1/
+    tar -xvf inux-5.2.8.tar.xz
+    cd linux-5.2.8/
 
 To build the kernel, the following should be done:
 
@@ -144,13 +144,13 @@ Compile the kernel itself:
 
     ARCH=arm CROSS_COMPILE=arm-linux-gnu- make -j8
 
-The kernel itself to be used is in the directory: .../linux-4.20.1/arch/arm/boot/ and it is called zImage:
+The kernel itself to be used is in the directory: .../linux-5.2.8/arch/arm/boot/ and it is called zImage:
 
-    .../linux-4.20.1/arch/arm/boot/zImage
+    .../linux-5.2.8/arch/arm/boot/zImage
 
-The .dtb file to be used is in the directory: .../linux-4.20.1/arch/arm/boot/dts/ and it is called imx6q-sabreauto.dtb
+The .dtb file to be used is in the directory: .../linux-5.2.8/arch/arm/boot/dts/ and it is called imx6q-sabreauto.dtb
 
-    .../linux-4.20.1/arch/arm/boot/dts/imx6q-sabreauto.dtb
+    .../linux-5.2.8/arch/arm/boot/dts/imx6q-sabreauto.dtb
 
 The location on SD card both components should be placed is /dev/sdX1 mounted to some directory (example: /tmp/sdX1 (where the SD card itself is: /dev/sdX).
 
@@ -158,12 +158,12 @@ Assuming X=b, it looks like:
 
     mount /dev/sdb1 /tmp/sdb1
 
-The following will happed after booting u-boot, and after booting kernel 4.20.1 from the SD card (initial boot @ [  0.000000]):
+The following will happed after booting u-boot, and after booting kernel 5.2.8 from the SD card (initial boot @ [  0.000000]):
 
     Starting kernel ...
 
     [    0.000000] Booting Linux on physical CPU 0x0
-    [    0.000000] Linux version 4.20.1 (vuser@fedora30-ssd) (gcc version 9.1.1 20190503 (Red Hat Cross 9.1.1-1) (GCC)) #1 SMP
+    [    0.000000] Linux version 5.2.8 (vuser@fedora30-ssd) (gcc version 9.1.1 20190503 (Red Hat Cross 9.1.1-1) (GCC)) #1 SMP
     Sun Aug 11 09:02:22 CEST 2019
     [    0.000000] CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c5387d
     [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
