@@ -24,7 +24,11 @@ Build u-boot using an ARM cross compiler, e.g. Fedora 30 gcc-arm-linux-gnu.x86_6
 
 To make .config file, the following command is required:
 
-    ARCH=arm make mx6sabreauto_defconfig
+    Fedora:
+    ARCH=arm CROSS_COMPILE=arm-linux-gnu- make -j8 mx6sabreauto_defconfig
+
+    Debian:
+    ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8 mx6sabreauto_defconfig
 
 ## Installing arm cross compiler on the host (the host used is Fedora 30 distro)
 
@@ -138,7 +142,11 @@ To build the kernel, the following should be done:
 
 Make proper .config:
 
-    ARCH=arm make imx_v6_v7_defconfig
+    Fedora:
+    ARCH=arm CROSS_COMPILE=arm-linux-gnu- make -j8 imx_v6_v7_defconfig
+
+    Debian:
+    ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8 imx_v6_v7_defconfig
 
 Compile the kernel itself:
 
