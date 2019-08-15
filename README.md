@@ -142,7 +142,11 @@ Make proper .config:
 
 Compile the kernel itself:
 
+    Fedora:
     ARCH=arm CROSS_COMPILE=arm-linux-gnu- make -j8
+
+    Debian:
+    ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8
 
 The kernel itself to be used is in the directory: .../linux-5.2.8/arch/arm/boot/ and it is called zImage:
 
