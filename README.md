@@ -18,6 +18,16 @@ The cloned version will comply with HEAD set to master branch (the following com
     git checkout -b <branch-name> # Take the current HEAD (the commit checked
     # out) and create a new branch called <branch-name>
 
+## Installing arm cross compiler on the host (the host used is Fedora 30 distro)
+
+To install on Fedora 30 gcc-arm-linux-gnu.x86_64 (which is not native x86_64 compiler), the following command is used:
+
+    sudo dnf install gcc-arm-linux-gnu.x86_64
+
+To install on Debian Stretch or Buster, the following command is used:
+
+    sudo apt-get install gcc-arm-linux-gnueabihf
+
 ## u-boot Build
 
 Build u-boot using an ARM cross compiler, e.g. Fedora 30 gcc-arm-linux-gnu.x86_64:
@@ -29,16 +39,6 @@ To make .config file, the following command is required:
 
     Debian:
     ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8 mx6sabreauto_defconfig
-
-## Installing arm cross compiler on the host (the host used is Fedora 30 distro)
-
-To install on Fedora 30 gcc-arm-linux-gnu.x86_64 (which is not native x86_64 compiler), the following command is used:
-
-    sudo dnf install gcc-arm-linux-gnu.x86_64
-
-To install on Debian Stretch or Buster, the following command is used:
-
-    sudo apt-get install gcc-arm-linux-gnueabihf
 
 ## Actual u-boot compilation:
 
