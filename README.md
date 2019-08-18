@@ -54,7 +54,7 @@ For the Sabre board case, u-boot.imx will not be generated as this board support
 
 In order to flash the SD card!
 
-SPL should reside at offset 1024KB (1MB) of the SD card. To place it there:
+SPL should reside at offset 1024KB (1MB) of the SD card. To place it there (assuming sdX is sdb):
 
     $ sudo dd if=SPL of=/dev/sdb bs=1k seek=1; sync
     (Note - the SD card node may vary, so adjust this as needed).
@@ -64,7 +64,7 @@ SPL should reside at offset 1024KB (1MB) of the SD card. To place it there:
 
 For the U-boot.imx case, it should reside at offset 1024KB (1MB) of the SD card. To place it there:
 
-    $ dd if=u-boot.imx of=/dev/<your-sd-card> bs=1k seek=1; sync
+    $ sudo dd if=u-boot.imx of=/dev/sdb bs=1k seek=1; sync
 
 The SD card device is typically something as /dev/sd<X> or /dev/mmcblk<X>. Note that there is a need for write permissions on the SD card for the command to succeed, so there is a need to su - as root, or use sudo, or do a chmod a+w as root on the SD card device node to grant permissions to users.
 
