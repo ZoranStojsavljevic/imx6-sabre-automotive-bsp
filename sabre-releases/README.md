@@ -4,7 +4,7 @@ Please, for HOST OS use the following: Ubuntu 18.04, since it ideally matches gi
 
 http://releases.ubuntu.com/18.04/
 
-### verification done on the following 
+### Verification done on the following 
 
 Also, the following Debian Stretch release was used for the verification:
 
