@@ -28,16 +28,7 @@ $ gcc --version
 
 ### YOCTO thud logs:
 ```
-z00449ct@pc228:~/projects/i.MX6/i.MX6-yocto/build$ bitbake -k core-image-minimal
-NOTE: Your conf/bblayers.conf has been automatically updated.
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-support/swupdate/var-image-swu.bb: Unable to get checksum for var-image-swu SRC_URI entry sw-description: file could not be found
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-bsp/u-boot/u-boot-fw-utils.bb: Unable to get checksum for u-boot-fw-utils-cross SRC_URI entry fw_env.config: file could not be found
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-bsp/u-boot/u-boot-fw-utils.bb: Unable to get checksum for u-boot-fw-utils SRC_URI entry fw_env.config: file could not be found
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-swupdate/recipes-support/swupdate/swupdate_git.bb: Unable to get checksum for swupdate SRC_URI entry swupdate.cfg: file could not be found
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-swupdate/recipes-support/swupdate/swupdate_git.bb: Unable to get checksum for swupdate SRC_URI entry swupdate.default: file could not be found
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-swupdate/recipes-support/swupdate/swupdate_2018.11.bb: Unable to get checksum for swupdate SRC_URI entry swupdate.cfg: file could not be found
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-swupdate/recipes-support/swupdate/swupdate_2018.11.bb: Unable to get checksum for swupdate SRC_URI entry swupdate.default: file could not be found
-WARNING: /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5_5.50.bb: Unable to get checksum for bluez5 SRC_URI entry variscite-bt.conf: file could not be found
+~/projects/i.MX6/i.MX6-yocto/build$ bitbake -k core-image-minimal
 Parsing recipes: 100% |######################################################################################################################| Time: 0:02:41
 Parsing of 2571 .bb files complete (0 cached, 2571 parsed). 3567 targets, 227 skipped, 0 masked, 0 errors.
 NOTE: Resolving any missing task queue dependencies
@@ -72,12 +63,8 @@ Initialising tasks: 100% |######################################################
 Sstate summary: Wanted 781 Found 0 Missed 781 Current 0 (0% match, 0% complete)
 NOTE: Executing SetScene Tasks
 NOTE: Executing RunQueue Tasks
-WARNING: linux-fslc-imx-4.9-1.0.x+gitAUTOINC+953c6e30c9-r0 do_fetch: Failed to fetch URL git://github.com/Freescale/linux-fslc.git;branch=4.9-1.0.x-imx, attempting MIRRORS if available
-WARNING: u-boot-fslc-v2018.11+gitAUTOINC+6e25ce6f3c-r0 do_fetch: Failed to fetch URL git://github.com/Freescale/u-boot-fslc.git;branch=2018.11+fslc, attempting MIRRORS if available
 NOTE: Tasks Summary: Attempted 2561 tasks of which 5 didn't need to be rerun and all succeeded.
 NOTE: Writing buildhistory
-
-Summary: There were 10 WARNING messages shown.
 ```
 ### Extra packages installed in the build
 
