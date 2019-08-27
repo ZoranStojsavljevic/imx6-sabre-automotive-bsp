@@ -1,0 +1,157 @@
+```
+user@localhost:~/projects/i.MX6/i.MX6-yocto/build$ bitbake -k fsl-image-qt5
+Loading cache: 100% |######################################################################################################################################################################################################################| Time: 0:00:00
+Loaded 3567 entries from dependency cache.
+NOTE: Resolving any missing task queue dependencies
+NOTE: Multiple providers are available for runtime wpa-supplicant (wpa-supplicant, wpa-supplicant-wl18xx)
+Consider defining a PREFERRED_RPROVIDER entry to match wpa-supplicant
+NOTE: Multiple providers are available for runtime wpa-supplicant-passphrase (wpa-supplicant, wpa-supplicant-wl18xx)
+Consider defining a PREFERRED_RPROVIDER entry to match wpa-supplicant-passphrase
+NOTE: Multiple providers are available for runtime wpa-supplicant-cli (wpa-supplicant, wpa-supplicant-wl18xx)
+Consider defining a PREFERRED_RPROVIDER entry to match wpa-supplicant-cli
+
+Build Configuration:
+BB_VERSION           = "1.40.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "universal"
+TARGET_SYS           = "arm-fslc-linux-gnueabi"
+MACHINE              = "imx6qdlsabreauto"
+DISTRO               = "fslc-x11"
+DISTRO_VERSION       = "2.6"
+TUNE_FEATURES        = "arm armv7a vfp thumb neon callconvention-hard"
+TARGET_FPU           = "hard"
+meta                 
+meta-poky            = "HEAD:50f33d3bfebcbfb1538d932fb487cfd789872026"
+meta-oe              
+meta-multimedia      = "HEAD:4cd3a39f22a2712bfa8fc657d09fe2c7765a4005"
+meta-freescale       = "HEAD:46fcbab00f7e01ded4609c09be89161783426f41"
+meta-freescale-3rdparty = "HEAD:c4b5ac6b20e4245ce0630e9197313aaef999a331"
+meta-freescale-distro = "HEAD:4a244af3993ae662624c6f615464e6806cc719a2"
+meta-browser         = "HEAD:75640e14e325479c076b6272b646be7a239c18aa"
+meta-gnome           
+meta-networking      
+meta-python          = "HEAD:4cd3a39f22a2712bfa8fc657d09fe2c7765a4005"
+meta-qt5             = "HEAD:0630018c0033c91fddda62a49f59a82ba6ec6850"
+meta-swupdate        = "HEAD:66af6e7e019b07b48facfd68be3c4ab2094502a4"
+meta-variscite-fslc  = "HEAD:ff12ab716e1c3f47e723a377f00aa01fa3e5b955"
+
+Initialising tasks: 100% |#################################################################################################################################################################################################################| Time: 0:00:06
+Sstate summary: Wanted 384 Found 116 Missed 268 Current 2607 (30% match, 91% complete)
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+WARNING: bluez5-5.50-r0 do_fetch: Failed to fetch URL file://variscite-bt.conf, attempting MIRRORS if available
+ERROR: bluez5-5.50-r0 do_fetch: Fetcher failure: Unable to find file file://variscite-bt.conf anywhere. The paths that were searched were:
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/fslc
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/fslc
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/fslc
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/fslc
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imx6qdlsabreauto                                                                                                                              
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imx6qdlsabreauto                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imx6qdlsabreauto                                                                                                                                       
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imx6qdlsabreauto                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/mx6dl                                                                                                                                         
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/mx6dl                                                                                                                                             
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/mx6dl                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/mx6dl                                                                                                                                                   
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxepdc                                                                                                                                       
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxepdc                                                                                                                                           
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxepdc                                                                                                                                                
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxepdc                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxgpu3d                                                                                                                                      
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxgpu3d                                                                                                                                          
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxgpu3d                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxgpu3d                                                                                                                                                
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxgpu2d                                                                                                                                      
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxgpu2d                                                                                                                                          
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxgpu2d                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxgpu2d                                                                                                                                                
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxgpu                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxgpu                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxgpu                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxgpu                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxvpu                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxvpu                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxvpu                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxvpu                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxipu                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxipu                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxipu                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxipu                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxpxp                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxpxp                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxpxp                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxpxp                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxfbdev                                                                                                                                      
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxfbdev                                                                                                                                          
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxfbdev                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxfbdev                                                                                                                                                
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/mx6q                                                                                                                                          
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/mx6q                                                                                                                                              
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/mx6q                                                                                                                                                   
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/mx6q                                                                                                                                                    
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxgpu3d                                                                                                                                      
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxgpu3d                                                                                                                                          
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxgpu3d                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxgpu3d                                                                                                                                                
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxgpu2d                                                                                                                                      
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxgpu2d                                                                                                                                          
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxgpu2d                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxgpu2d                                                                                                                                                
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxgpu                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxgpu                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxgpu                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxgpu                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxvpu                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxvpu                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxvpu                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxvpu                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxipu                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxipu                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxipu                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxipu                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imxfbdev                                                                                                                                      
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imxfbdev                                                                                                                                          
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imxfbdev                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imxfbdev                                                                                                                                                
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/mx6                                                                                                                                           
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/mx6                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/mx6                                                                                                                                                    
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/mx6                                                                                                                                                     
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/imx                                                                                                                                           
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/imx                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/imx                                                                                                                                                    
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/imx                                                                                                                                                     
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/armv7a                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/armv7a                                                                                                                                            
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/armv7a                                                                                                                                                 
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/armv7a                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/arm                                                                                                                                           
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/arm                                                                                                                                               
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/arm                                                                                                                                                    
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/arm                                                                                                                                                     
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/meta-variscite-fslc/recipes-connectivity/bluez5/files/                                                                                                                                              
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5-5.50/                                                                                                                                                  
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5/                                                                                                                                                       
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/files/                                                                                                                                                        
+    /home/z00449ct/projects/i.MX6/i.MX6-yocto/downloads/                                                                                                                                                                                                  
+ERROR: bluez5-5.50-r0 do_fetch: Fetcher failure for URL: 'file://variscite-bt.conf'. Unable to fetch URL from any source.
+ERROR: bluez5-5.50-r0 do_fetch: Function failed: base_do_fetch
+ERROR: Logfile of failure stored in: /home/z00449ct/projects/i.MX6/i.MX6-yocto/build/tmp/work/armv7at2hf-neon-fslc-linux-gnueabi/bluez5/5.50-r0/temp/log.do_fetch.27944
+ERROR: Task (/home/z00449ct/projects/i.MX6/i.MX6-yocto/sources/poky/meta/recipes-connectivity/bluez5/bluez5_5.50.bb:do_fetch) failed with exit code '1'
+WARNING: qtgraphicaleffects-5.11.3+gitAUTOINC+d560b79d05-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtgraphicaleffects.git;name=qtgraphicaleffects;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtquickcontrols-5.11.3+gitAUTOINC+6b7f91c097-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtquickcontrols.git;name=qtquickcontrols;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtwebsockets-5.11.3+gitAUTOINC+395c1f1aed-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtwebsockets.git;name=qtwebsockets;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtmultimedia-5.11.3+gitAUTOINC+6966a09c9a-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtmultimedia.git;name=qtmultimedia;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtwebchannel-5.11.3+gitAUTOINC+94fee0eaa3-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtwebchannel.git;name=qtwebchannel;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtsensors-5.11.3+gitAUTOINC+0dab0ff3d3-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtsensors.git;name=qtsensors;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtlocation-5.11.3+gitAUTOINC+ffac0dc5a6_b59b0450c6-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtlocation.git;name=qtlocation;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtwebkit-5.11.3+gitAUTOINC+beaeeb9988-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtwebkit.git;name=qtwebkit;branch=dev;protocol=git, attempting MIRRORS if available
+WARNING: qtlocation-5.11.3+gitAUTOINC+ffac0dc5a6_b59b0450c6-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtlocation-mapboxgl.git;name=qtlocation-mapboxgl;branch=upstream/qt-staging;protocol=git;destsuffix=git/src/3rdparty/mapbox-gl-native, attempting MIRRORS if available
+WARNING: qtsvg-5.11.3+gitAUTOINC+ab492718de-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtsvg.git;name=qtsvg;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qt3d-native-5.11.3+gitAUTOINC+cd3e621ccf-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qt3d.git;name=qt3d;branch=5.11;protocol=git, attempting MIRRORS if available
+WARNING: qtsmarthome-1.0-r0 do_fetch: Failed to fetch URL http://share.basyskom.com/demos/smarthome_src.tar.gz, attempting MIRRORS if available
+WARNING: qt5everywheredemo-1.0-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt-labs/qt5-everywhere-demo, attempting MIRRORS if available
+WARNING: qtwebkit-examples-5.11.3+gitAUTOINC+2d68492004-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtwebkit-examples.git;name=qtwebkit-examples;branch=dev;protocol=git, attempting MIRRORS if available
+
+Keyboard Interrupt, closing down...
+```
