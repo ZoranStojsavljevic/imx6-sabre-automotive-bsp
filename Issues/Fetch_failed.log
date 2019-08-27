@@ -1,4 +1,3 @@
-```
 user@localhost:~/projects/i.MX6/i.MX6-yocto/build$ bitbake -k fsl-image-qt5
 Loading cache: 100% |######################################################################################################################################################################################################################| Time: 0:00:00
 Loaded 3567 entries from dependency cache.
@@ -154,4 +153,3 @@ WARNING: qt5everywheredemo-1.0-r0 do_fetch: Failed to fetch URL git://code.qt.io
 WARNING: qtwebkit-examples-5.11.3+gitAUTOINC+2d68492004-r0 do_fetch: Failed to fetch URL git://code.qt.io/qt/qtwebkit-examples.git;name=qtwebkit-examples;branch=dev;protocol=git, attempting MIRRORS if available
 
 Keyboard Interrupt, closing down...
-```
