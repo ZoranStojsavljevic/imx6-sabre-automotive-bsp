@@ -47,6 +47,14 @@ To make .config file, the following command is required:
 
     Debian:
     ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8
+    
+## Actual u-boot compilation for the expert developers (part of porting effort) with no valid .dts tree present
+
+    Fedora:
+    ARCH=arm CROSS_COMPILE=arm-linux-gnu- make -j8 EXT_DTB=<path/to/your/custom/built/dtb>
+
+    Debian:
+    ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8 EXT_DTB=<path/to/your/custom/built/dtb>
 
 ## Place SPL and u-boot.img OR u-boot.imx on SD card
 
