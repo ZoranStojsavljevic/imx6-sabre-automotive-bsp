@@ -143,7 +143,7 @@ The file to be downloaded is the following: linux-5.2.8.tar.xz
 
 The command to unpack the designated kernel is:
 
-    tar -xvf inux-5.2.8.tar.xz
+    tar -xvf linux-5.2.8.tar.xz
     cd linux-5.2.8/
 
 To build the kernel, the following should be done:
@@ -178,7 +178,7 @@ Assuming X=b, it looks like:
 
     mount /dev/sdb1 /tmp/sdb1
 
-The following will happed after booting u-boot, and after booting kernel 5.2.8 from the SD card (initial boot @ [  0.000000]):
+The following will happen after booting u-boot, and after booting kernel 5.2.8 from the SD card (initial boot @ [  0.000000]):
 
     Starting kernel ...
 
